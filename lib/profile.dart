@@ -22,7 +22,10 @@ class ProfilePage extends StatelessWidget {
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  CircleAvatar(radius: 40),
+                  CircleAvatar(
+                    radius: 40,
+                    backgroundImage: AssetImage('assets/images/profile.jpg'), // mets ton image ici
+                        ),
                   SizedBox(height: 12),
                   Text(
                     'Jenifer Lawrence',

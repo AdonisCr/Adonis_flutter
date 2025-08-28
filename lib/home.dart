@@ -23,17 +23,13 @@ class HomePage extends StatelessWidget {
                     fontSize: 24,
                   ),
                 ),
-                 Icon(
-                  Icons.notifications,
-                  size: 28,
-                  color: Color(0xFF06306E),
-                ),
+                Icon(Icons.notifications, size: 28, color: Color(0xFF06306E)),
               ],
             ),
           ),
           Expanded(
             child: SingleChildScrollView(
-              padding:  EdgeInsets.all(16.0),
+              padding: EdgeInsets.all(16.0),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
@@ -42,24 +38,24 @@ class HomePage extends StatelessWidget {
                     style: TextStyle(
                       fontWeight: FontWeight.bold,
                       fontSize: 30,
-                      color:  Color(0xFF06306E),
+                      color: Color(0xFF06306E),
                     ),
                   ),
-                   Text(
+                  Text(
                     'Good Morning',
                     style: TextStyle(
                       fontSize: 16,
                       color: Color.fromARGB(255, 206, 206, 206),
                     ),
                   ),
-                   SizedBox(height: 10),
+                  SizedBox(height: 10),
                   Container(
                     decoration: BoxDecoration(
                       color: Colors.grey.shade100,
                       borderRadius: BorderRadius.circular(12),
                     ),
-                    padding:  EdgeInsets.symmetric(horizontal: 16),
-                    child:  TextField(
+                    padding: EdgeInsets.symmetric(horizontal: 16),
+                    child: TextField(
                       decoration: InputDecoration(
                         border: InputBorder.none,
                         hintText: 'Search',
@@ -68,47 +64,50 @@ class HomePage extends StatelessWidget {
                       ),
                     ),
                   ),
-                   SizedBox(height: 10),
+                  SizedBox(height: 10),
                   Container(
-                    padding:  EdgeInsets.all(16),
+                    padding: EdgeInsets.symmetric(vertical: 5, horizontal: 8),
                     decoration: BoxDecoration(
-                      border: Border.all(
-                        color:  Color(0xFF06306E),
-                        width: 3,
-                      ),
+                      border: Border.all(color: Color(0xFF06306E), width: 3),
                       borderRadius: BorderRadius.circular(12),
                     ),
                     child: Row(
-                        children: [
-                        Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                          Text(
-                            'Welcome!',
-                            style: TextStyle(
-                            fontWeight: FontWeight.bold,
-                            fontSize: 24,
-                            color:  Color(0xFF06306E),
-                            ),
+                      children: [
+                        Expanded(
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Text(
+                                'Welcome!',
+                                style: TextStyle(
+                                  fontWeight: FontWeight.bold,
+                                  fontSize: 24,
+                                  color: Color(0xFF06306E),
+                                ),
+                              ),
+                              Text('Let’s schedule your projects'),
+                            ],
                           ),
-                           Text('Let’s schedule your projects'),
-                          ],
                         ),
-                         SizedBox(width: 50),
+                        SizedBox(width: 1),
                         // Remplace l'icône par une image
                         ClipRRect(
-                          borderRadius: BorderRadius.circular(8),
-                          child: Image.asset(
-                          'assets/images/img.jpg',
-                          width: 20,
-                          height: 20,
-                          fit: BoxFit.cover,
+                          borderRadius: BorderRadius.circular(12),
+                          child: Transform.scale(
+                            scale: 1.4, // Ajuste la valeur pour zoomer plus ou moins
+                            child: Image.asset(
+                              'assets/images/img.jpg',
+                              width: 120,
+                              height: 120,
+                              fit: BoxFit.cover,
+                              alignment: Alignment.center, // centre l'image
+                            ),
                           ),
                         ),
                       ],
                     ),
                   ),
-                   SizedBox(height: 10),
+                  SizedBox(height: 10),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
@@ -117,20 +116,17 @@ class HomePage extends StatelessWidget {
                         style: TextStyle(
                           fontWeight: FontWeight.bold,
                           fontSize: 19,
-                          color:  Color(0xFF06306E),
+                          color: Color(0xFF06306E),
                         ),
                       ),
-                      TextButton(
-                        onPressed: () {},
-                        child:  Text('view all'),
-                      ),
+                      TextButton(onPressed: () {}, child: Text('view all')),
                     ],
                   ),
-                   SizedBox(height: 10),
+                  SizedBox(height: 10),
                   GridView.count(
                     crossAxisCount: 2,
                     shrinkWrap: true,
-                    physics:  NeverScrollableScrollPhysics(),
+                    physics: NeverScrollableScrollPhysics(),
                     crossAxisSpacing: 12,
                     mainAxisSpacing: 12,
                     childAspectRatio: 1.2,
@@ -139,7 +135,7 @@ class HomePage extends StatelessWidget {
                         title: 'Mobile App',
                         subtitle: 'E-Commerce',
                         progress: 0.5,
-                        color:  Color(0xFF06306E),
+                        color: Color(0xFF06306E),
                         textColor: Colors.white,
                       ),
                       _projectCard(
@@ -178,10 +174,10 @@ class HomePage extends StatelessWidget {
   }) {
     return Container(
       decoration: BoxDecoration(
-        color: color ??  Color(0xFFDCDCFF),
+        color: color ?? Color(0xFFDCDCFF),
         borderRadius: BorderRadius.circular(16),
       ),
-      padding:  EdgeInsets.all(12),
+      padding: EdgeInsets.all(12),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
@@ -192,7 +188,7 @@ class HomePage extends StatelessWidget {
               fontSize: 12,
             ),
           ),
-           SizedBox(height: 8),
+          SizedBox(height: 8),
           Text(
             title,
             style: TextStyle(
